@@ -10,6 +10,9 @@
 
     <context:component-scan base-package="com.company" />
 
+    <bean name="/weather/*" class="com.company.web.WeatherController"/>
+
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
