@@ -11,6 +11,7 @@
     <context:component-scan base-package="com.company" />
 
     <bean name="/weather/*" class="com.company.web.WeatherController"/>
+    <bean name="/hello/*" class="com.company.web.HelloController"/>
 
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

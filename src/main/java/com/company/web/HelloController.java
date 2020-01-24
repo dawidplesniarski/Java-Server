@@ -1,4 +1,4 @@
-package com.company;
+package com.company.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,6 +13,6 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String printHello(ModelMap model){
         model.addAttribute("message", "Hello Spring");
-        return "hello";
+        return "hello/hello";
     }
 }

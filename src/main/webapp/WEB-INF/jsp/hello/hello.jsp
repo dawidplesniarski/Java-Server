@@ -11,7 +11,7 @@
     <title>Hello World!</title>
 </head>
 <body>
-<h2>${weatherInformation}</h2>
-<a href="weather"></a>
+<h2>${message}</h2>
+<a href="weather/weather.do">Pogoda</a>
 </body>
 </html>
