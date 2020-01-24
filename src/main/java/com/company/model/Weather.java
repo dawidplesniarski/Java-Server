@@ -1,6 +1,7 @@
 package com.company.model;
 
 public class Weather{
+
 private String weatherData;
 
     public Weather(String weatherData){

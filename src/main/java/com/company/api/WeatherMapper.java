@@ -7,13 +7,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.swing.tree.RowMapper;
+import javax.swing.tree.TreePath;
+
 @Component
-public class WeatherMapper {
+public class WeatherMapper  {
     /*
     @RequestMapping(method = RequestMethod.GET)
     public String printWeather(ModelMap model){
         model.addAttribute("weatherData", "Hello Spring");
-        return "hello/hello";
-    }
-    */
+        return "weather/weather";
+    } */
 }
