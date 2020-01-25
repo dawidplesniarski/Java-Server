@@ -37,8 +37,7 @@ public class WeatherJsonParser implements WeatherDao {
 
         Gson gson = new Gson();
         Weather weather = gson.fromJson(buffer.toString(),Weather.class);
-
-        return weather.toString();
+        return buffer.toString();
 
     }
 }

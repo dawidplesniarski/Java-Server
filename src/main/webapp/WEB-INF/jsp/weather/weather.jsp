@@ -11,7 +11,8 @@
     <title>Weather</title>
 </head>
 <body>
-<h6>${weatherInformation}</h6>
+<h6>${weatherName}</h6>
+<h6>${weatherCod}</h6>
 <a href="weather"></a>
 </body>
 </html>

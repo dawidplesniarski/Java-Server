@@ -2,6 +2,8 @@ package com.company.web;
 
 import com.company.api.WeatherDao;
 import com.company.model.Weather;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class WeatherController {
 
-    //private String weatherData;
 
     @Autowired
     private WeatherDao weatherDao;
@@ -25,9 +26,13 @@ public class WeatherController {
         @RequestMapping(method = RequestMethod.GET)
         public String printHello(ModelMap model) throws Exception {
 
-        //weatherData = (String) weatherDao.getData();
-        Weather weather = new Weather((String) weatherDao.getData());
-        model.addAttribute("weatherInformation", weather.getWeatherData());
+        Weather weather;// = new Weather((String) weatherDao.getData());
+
+            Gson gson = new Gson();
+            weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
+            System.out.println("Controller"+ weather.getCod() + weather.getName());
+        model.addAttribute("weatherName", weather.getName());
+        model.addAttribute("weatherCod", weather.getCod());
         return "weather/weather";
     }
 
