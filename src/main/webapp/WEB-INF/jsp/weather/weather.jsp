@@ -11,8 +11,12 @@
     <title>Weather</title>
 </head>
 <body>
-<h6>${weatherName}</h6>
-<h6>${weatherCod}</h6>
-<a href="weather"></a>
+<h1>Weather for city ${weatherName}</h1>
+<text>${weatherName}</text><br>
+<text>${weatherCod}</text><br>
+<text>Temperatura powietrza: ${weatherTemp}</text><br>
+<text>Ciśnienie: ${weatherPressure}</text><br>
+
+<a href="../">Back</a>
 </body>
 </html>

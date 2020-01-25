@@ -30,9 +30,11 @@ public class WeatherController {
 
             Gson gson = new Gson();
             weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
-            System.out.println("Controller"+ weather.getCod() + weather.getName());
+            //System.out.println("Controller" + weather.getTemp() + weather.getPressure());
         model.addAttribute("weatherName", weather.getName());
         model.addAttribute("weatherCod", weather.getCod());
+        model.addAttribute("weatherTemp", weather.getTemp());
+        model.addAttribute("weatherPressure", weather.getPressure());
         return "weather/weather";
     }
 
