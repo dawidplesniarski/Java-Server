@@ -41,7 +41,7 @@ private MainInformations main;
         this.cod = cod;
     }
 
-    public Weather() {
+    public Weather(String string, String resultSetString) {
     }
 
     @Override

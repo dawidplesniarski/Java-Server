@@ -5,6 +5,8 @@ import com.company.model.Weather;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +32,7 @@ public class WeatherController {
 
             Gson gson = new Gson();
             weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
-            //System.out.println("Controller" + weather.getTemp() + weather.getPressure());
+
         model.addAttribute("weatherName", weather.getName());
         model.addAttribute("weatherCod", weather.getCod());
         model.addAttribute("weatherTemp", weather.getTemp());
