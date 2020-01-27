@@ -12,10 +12,12 @@
 </head>
 <body>
 <h1>Weather for city ${weatherName}</h1>
-<text>${weatherName}</text><br>
-<text>${weatherCod}</text><br>
 <text>Temperatura powietrza: ${weatherTemp}</text><br>
+<text>Temperatura minimalna: ${weatherTempMin}</text><br>
+<text>Temperatura maksymalna: ${weatherTempMax}</text><br>
+<text>Temperatura odczuwalna: ${weatherFeelsLike}</text><br>
 <text>Ciśnienie: ${weatherPressure}</text><br>
+<text>Wilgotność powietrza: ${weatherHumidity}</text><br>
 
 <a href="../">Back</a>
 </body>
