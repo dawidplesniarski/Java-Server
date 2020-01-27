@@ -12,7 +12,7 @@ import java.util.List;
 @Service("selectDao")
 public class WeatherSelect implements SelectDao {
 
-    private static final String GET_ALL_SQL = "SELECT cityName, averageTemp, feels_like, pressure, humidity FROM tok.weather";
+    private static final String GET_ALL_SQL = "SELECT cityName, averageTemp, feels_like, pressure, humidity FROM tok.weather_archive";
     //private static final String GET_ALL_SQL = "SELECT cityName, averageTemp FROM tok.weather";
 
     @Autowired

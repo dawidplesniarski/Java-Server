@@ -16,6 +16,6 @@ public class WeatherJDBC {
     }
 
     public String toString() {
-        return cityName + " " + averageTemp + " " + dbFeelsLike + " " + dbPressure + " " + dbHumidity;
+        return "Miasto: " + cityName + ", Temperatura: " + averageTemp + ", Temperatura odczuwalna: " + dbFeelsLike + ", Cisnienie: " + dbPressure + ", Wilgotnosc: " + dbHumidity;
     }
 }
