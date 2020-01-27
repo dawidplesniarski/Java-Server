@@ -5,11 +5,11 @@
   Time: 19:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<table>
-    <c:forEach items="${weatherList}" var="item">
-        <tr>
-            <td><c:out value="${item}" /></td>
-        </tr>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<ul>
+    <c:forEach var="weather" items="${weatherList}" varStatus="status">
+        <li>
+                <c:out value="${weather}"></c:out>
+        </li>
     </c:forEach>
-</table>
+</ul>
