@@ -19,6 +19,7 @@
 <text>Ciśnienie: ${weatherPressure}</text><br>
 <text>Wilgotność powietrza: ${weatherHumidity}</text><br>
 
-<a href="../">Back</a>
+<a href="../">Back</a><br>
+<a href="../archive/weather_archive.do">Archiwum pogody</a>
 </body>
 </html>

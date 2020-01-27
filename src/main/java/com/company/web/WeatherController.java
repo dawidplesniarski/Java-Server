@@ -25,13 +25,14 @@ public class WeatherController {
         this.weatherDao = weatherDao;
     }
 
+
         @RequestMapping(method = RequestMethod.GET)
         public String printHello(ModelMap model) throws Exception {
 
-        Weather weather;// = new Weather((String) weatherDao.getData());
+        Weather weather;
 
-            Gson gson = new Gson();
-            weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
+        Gson gson = new Gson();
+        weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
 
         model.addAttribute("weatherName", weather.getName());
         model.addAttribute("weatherTemp", weather.getTemp());
@@ -43,6 +44,10 @@ public class WeatherController {
 
         return "weather/weather";
     }
+
+
+
+
 
     /*
     @RequestMapping(method = RequestMethod.GET)

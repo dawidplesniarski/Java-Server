@@ -11,17 +11,17 @@ import java.util.HashMap;
 import java.util.List;
 
 @Service("insertDao")
-public class WeatherInsert /*implements InsertDao*/ {
+public class WeatherInsert implements InsertDao {
 
-    private static final String INSERT_DATA = "INSERT INTO tok.weather (Name,COD) VALUES (?,?)";
+    private static final String INSERT_DATA = "INSERT INTO tok.weather (name, temp, feels_like, pressure, humidity) VALUES (?,?,?,?,?)";
 
-    @Autowired
-    @Qualifier("jdbcTemplate")
-    private NamedParameterJdbcOperations jdbcTemplate;
+//    @Autowired
+//    @Qualifier("jdbcTemplate")
+//    private NamedParameterJdbcOperations jdbcTemplate;
 
 
-//    @Override
-//    public void insertData(String name, String cod) throws Exception {
-//    jdbcTemplate.update(INSERT_DATA,name,cod);
-//    }
+    @Override
+    public void insertData(String name, Double temp, Double feels_like, Integer pressure, Integer humidity) throws Exception {
+        //jdbcTemplate.update(INSERT_DATA,name,temp,feels_like,pressure,humidity);
+    }
 }

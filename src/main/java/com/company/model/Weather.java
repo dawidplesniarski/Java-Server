@@ -9,9 +9,6 @@ private String name;
 private String cod;
 private MainInformations main;
 
-    public Weather(String weatherData){
-        this.weatherData = weatherData;
-    }
 
     public Weather(String name, String cod, MainInformations main){
         this.name = name;
@@ -53,7 +50,7 @@ private MainInformations main;
         this.cod = cod;
     }
 
-    public Weather(String string, String resultSetString) {
+    public Weather(String string1, String s, String setString, String string, String resultSetString) {
     }
 
     @Override
