@@ -48,7 +48,7 @@ public class WeatherController {
         model.addAttribute("weatherHumidity", weather.getHumidity());
 
         WeatherInsert weatherInsert = new WeatherInsert();
-        insertDao.insertData();
+        insertDao.insertData(weather);
 
 
         return "weather/weather";
