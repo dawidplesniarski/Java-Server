@@ -1,6 +1,8 @@
 package com.company.web;
 
 import com.company.api.WeatherDao;
+import com.company.jdbc.InsertDao;
+import com.company.jdbc.WeatherInsert;
 import com.company.model.Weather;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -20,10 +22,13 @@ public class WeatherController {
 
     @Autowired
     private WeatherDao weatherDao;
+    @Autowired
+    private InsertDao insertDao;
 
     public void setWeatherDao(WeatherDao weatherDao){
         this.weatherDao = weatherDao;
     }
+    public void setInsertDao(InsertDao insertDao) { this.insertDao = insertDao; }
 
 
         @RequestMapping(method = RequestMethod.GET)
@@ -41,6 +46,10 @@ public class WeatherController {
         model.addAttribute("weatherFeelsLike", weather.getFeelsLike());
         model.addAttribute("weatherPressure", weather.getPressure());
         model.addAttribute("weatherHumidity", weather.getHumidity());
+
+        WeatherInsert weatherInsert = new WeatherInsert();
+        insertDao.insertData();
+
 
         return "weather/weather";
     }
