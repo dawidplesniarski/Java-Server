@@ -2,17 +2,12 @@ package com.company.web;
 
 import com.company.api.WeatherDao;
 import com.company.jdbc.InsertDao;
-import com.company.jdbc.WeatherInsert;
 import com.company.model.Weather;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 
 @RequestMapping("")
@@ -31,11 +26,10 @@ public class WeatherController {
     public void setInsertDao(InsertDao insertDao) { this.insertDao = insertDao; }
 
 
-        @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
         public String printHello(ModelMap model) throws Exception {
 
         Weather weather;
-
         Gson gson = new Gson();
         weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
 
@@ -47,7 +41,6 @@ public class WeatherController {
         model.addAttribute("weatherPressure", weather.getPressure());
         model.addAttribute("weatherHumidity", weather.getHumidity());
 
-        WeatherInsert weatherInsert = new WeatherInsert();
         insertDao.insertData(weather);
 
 

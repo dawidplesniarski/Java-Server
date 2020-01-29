@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: dawid
@@ -12,6 +13,12 @@
 </head>
 <body>
 <h2>${message}</h2>
-<a href="weather/weather.do">Pogoda</a>
+<text>Podaj nazwę miasta:</text><br>
+<form:form action="weather/weather.do" method="GET">
+    <input type=”text” name=cityName><br>
+    <input type="submit" value="Sprawdź Pogodę"><br>
+</form:form>
+
+<%--<a href="weather/weather.do?cityName=${cityName}">Pogoda</a>--%>
 </body>
 </html>

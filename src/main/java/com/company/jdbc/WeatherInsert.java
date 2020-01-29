@@ -23,7 +23,6 @@ public class WeatherInsert implements InsertDao {
 
     @Override
     public void insertData(Weather weather) throws Exception {
-        //jdbcTemplate.update(INSERT_DATA,name,temp,feels_like,pressure,humidity);
         jdbcTemplate.update(INSERT_DATA,
                 weather.getName(),
                 new Double(weather.getTemp()),
@@ -31,12 +30,5 @@ public class WeatherInsert implements InsertDao {
                 new Integer(weather.getPressure()),
                 new Integer(weather.getHumidity())
                 );
-//        jdbcTemplate.update(INSERT_DATA,
-//                "Brzesko",
-//                2.33,
-//                1.33,
-//                1001,
-//                87
-//        );
     }
 }
