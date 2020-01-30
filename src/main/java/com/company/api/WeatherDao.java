@@ -1,5 +1,5 @@
 package com.company.api;
 
 public interface WeatherDao {
-    Object getData() throws Exception;
+    Object getData(String cityName) throws Exception;
 }

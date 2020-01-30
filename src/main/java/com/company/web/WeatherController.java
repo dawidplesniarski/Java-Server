@@ -24,14 +24,16 @@ public class WeatherController {
         this.weatherDao = weatherDao;
     }
     public void setInsertDao(InsertDao insertDao) { this.insertDao = insertDao; }
+    //String cityName = "Warszawa";
 
 
     @RequestMapping(method = RequestMethod.GET)
-        public String printHello(ModelMap model) throws Exception {
+        public String printHello(@RequestParam("cityName") String cityName, ModelMap model) throws Exception {
 
+        System.out.println(cityName);
         Weather weather;
         Gson gson = new Gson();
-        weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
+        weather = gson.fromJson((String) weatherDao.getData(cityName), Weather.class);
 
         model.addAttribute("weatherName", weather.getName());
         model.addAttribute("weatherTemp", weather.getTemp());
