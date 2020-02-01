@@ -9,22 +9,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
+
 
 @RequestMapping("")
 @Controller
 public class WeatherController {
 
 
-    @Autowired
     private WeatherDao weatherDao;
-    @Autowired
     private InsertDao insertDao;
-
-    public void setWeatherDao(WeatherDao weatherDao){
+    @Autowired
+    public void setWeatherDao(@Autowired WeatherDao weatherDao){
         this.weatherDao = weatherDao;
     }
-    public void setInsertDao(InsertDao insertDao) { this.insertDao = insertDao; }
-    //String cityName = "Warszawa";
+    @Autowired
+    public void setInsertDao(@Autowired InsertDao insertDao) { this.insertDao = insertDao; }
 
 
     @RequestMapping(method = RequestMethod.GET)
@@ -33,36 +33,27 @@ public class WeatherController {
         System.out.println(cityName);
         Weather weather;
         Gson gson = new Gson();
-        weather = gson.fromJson((String) weatherDao.getData(cityName), Weather.class);
+        try {
+            weather = gson.fromJson((String) weatherDao.getData(cityName), Weather.class);
 
-        model.addAttribute("weatherName", weather.getName());
-        model.addAttribute("weatherTemp", weather.getTemp());
-        model.addAttribute("weatherTempMin", weather.getTempMin());
-        model.addAttribute("weatherTempMax", weather.getTempMax());
-        model.addAttribute("weatherFeelsLike", weather.getFeelsLike());
-        model.addAttribute("weatherPressure", weather.getPressure());
-        model.addAttribute("weatherHumidity", weather.getHumidity());
+            model.addAttribute("weatherName", weather.getName());
+            model.addAttribute("weatherTemp", weather.getTemp());
+            model.addAttribute("weatherTempMin", weather.getTempMin());
+            model.addAttribute("weatherTempMax", weather.getTempMax());
+            model.addAttribute("weatherFeelsLike", weather.getFeelsLike());
+            model.addAttribute("weatherPressure", weather.getPressure());
+            model.addAttribute("weatherHumidity", weather.getHumidity());
 
-        insertDao.insertData(weather);
+            insertDao.insertData(weather);
 
 
-        return "weather/weather";
+            return "weather/weather";
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return "hello/hello";
+        }
+
+
     }
 
-
-
-
-
-    /*
-    @RequestMapping(method = RequestMethod.GET)
-    public Weather form() {
-        return new Weather();
-    }
-
-
-
-    @RequestMapping(method = RequestMethod.POST)
-    public String getWeatherInformation(Weather weather){
-        return weatherInformation;
-    } */
 }
