@@ -50,7 +50,7 @@ public class WeatherController {
             return "weather/weather";
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return "hello/hello";
+            return "redirect:../";
         }
 
 
