@@ -14,7 +14,5 @@ public class WeatherRowMapper implements RowMapper<WeatherJDBC> {
         WeatherJDBC weather = new WeatherJDBC(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),
                 resultSet.getString(4),resultSet.getString(5));
         return weather;
-//        WeatherJDBC weather = new WeatherJDBC(resultSet.getString(1),resultSet.getString(2));
-//        return weather;
     }
 }

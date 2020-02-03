@@ -43,21 +43,7 @@ public class ArchiveController {
                 System.out.println(weatherList.get(i).toString());
             }
 
-            //Weather weather;
 
-            //Gson gson = new Gson();
-            //weather = gson.fromJson((String) weatherDao.getData(), Weather.class);
-
-
-//            model.addAttribute("weatherName", weather.getName());
-//            model.addAttribute("weatherTemp", weather.getTemp());
-//            model.addAttribute("weatherTempMin", weather.getTempMin());
-//            model.addAttribute("weatherTempMax", weather.getTempMax());
-//            model.addAttribute("weatherFeelsLike", weather.getFeelsLike());
-//            model.addAttribute("weatherPressure", weather.getPressure());
-//            model.addAttribute("weatherHumidity", weather.getHumidity());
-
-            //return "archive/weather_archive";
         }
 
     @RequestMapping
